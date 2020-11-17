@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>비교와 연산</h1>
+    
+    <h2>비교연산자</h2>
+    <h3>== (타입을 비교하지는 않음)</h3>
+    alert(1==2) => false<br>
+    alert(1==1) => true<br>
+    alert("one" == "one") => true<br><br>
+
+    <h3>===(타입까지 비교한다)</h3>
+    alert(1=='1')       => true<br>
+    alert(1==='1')      => false<br>
+    alert(true == 1)    => true (숫자 1외 다른 수는 false)<br> 
+    alert(true == '1')  => true<br>
+    alert(true === 1)   => false<br>
+    alert(true === '1') => false<br><br>
+
+    alert(0 === -0)     => true<br>
+    alert(NaN === NaN)  => false (NaN은 계산되지 않는 것이라 비교x)<br><br>
+
+    alert(null == undefined)    => true<br>
+    alert(null === undefined)   => false<br>
+    
+    **null은 개발자가 값이 없는 상태를 지정. undefined는 지정되지 않은것
+
+    <h3>!(반대연산자)</h3>
+    alert(1 != 2)       => true<br>
+    alert(1 != 1)       => false<br>
+
+    <h3>>, <, <=, >=</h3>
+
+</body>
+</html>
