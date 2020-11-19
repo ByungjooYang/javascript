@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배열</title>
+</head>
+<body>
+    <h1>배열(array)</h1>
+    let member = ['aa', 'bb', 'cc']; 형식으로 선언한다. <br>
+    member[0]; 형식으로 출력<br>
+
+    function get_members(){<br>
+        return ['a', 'b', 'c'];<br>
+    }<br>
+
+    let members = get_members(); 이런식으로도 가능<br> 
+    자바처럼 배열.length 로 갯수 얻기가 가능하다.<br>
+
+    <h2>배열의 추가</h2>
+    member.push('dd'); => 배열 마지막에 'dd'를 추가한다.<br>
+    member.concat(['e', 'f']); => 배열에 여러개의 요소 추가<br>
+    member.unshift('z'); => 배열의 맨 앞에 요소를 추가한다.<br>
+    member.splice(3, 2, 'g', 'h'); => 첫 매개변수는 넣을 위치, 두번째는 앞 인덱스 이후에 몇개를 제거할지, 그 이후는 넣을 값을 의미. 넣는값이 없으면 제거만 된다<br>
+
+    <h2>배열의 제거 및 정렬</h2>
+    member.shift(); => 맨 앞의 요소를 제거한다.<br>
+    member.pop(); => 제일 뒤의 요소를 제거한다.<br>
+
+    member.sort(); => 오름차순으로 정렬<br>
+    member.reverse(); => 내림차순으로 정렬<br>
+
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>객체</title>
+</head>
+<body>
+    <h1>객체</h1>
+
+    <h2>객체 생성하는 법</h2>
+    let grades = { 'a' : 10, 'b' : 7, 'c' : 8};<br>
+    <h6>또는</h6>
+    let grades = new Object();<br>
+    grades['a'] = 10;...<br>
+    alert(grades['a']);<br>
+    <br>
+    <strong>여기서 a는 key, 10은 value이다.</strong><br>
+
+    for(key in grades){<br>
+        &emsp;document.write("key : " + key + " value : " + grade[key] + "&lt;br&gt;" );<br>
+    }<br>
+    for(let name in grades){<br>
+        &emsp;document.write("key : " + name + " value : " + grades[name] + "&lt;br&gt;" );<br>
+    }<br>
+
+    let grades = {<br>
+        'list' : {'a' : 10 ...}<br>
+        'show' : function(){<br>
+            alert(this.list);<br>
+        }<br>
+    }<br><br>
+    
+    => grades['show']();, grades.show(); 형식으로 함수 사용가능<br>
+
+</body>
+<script>
+    let grades = {'a':10, 'b':7, 'c':8};
+    for(key in grades){
+        document.write("key : " + key + " value : " + grades[key] + "<br>" );
+    }
+   /* for(let name in grades){
+        document.write("key : " + name + " value : " + grades[name] + "<br>" );
+    }*/
+</script>
+</html>
