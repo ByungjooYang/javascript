@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>정규표현식</title>
+</head>
+<body>
+    <h1>정규표현식</h1>
+    let pattern = /a/; => a를 찾는다는 뜻<br> 
+    let pattern = new RegExp('a'); => 위와 같다.<br><br>
+
+    <h2>메서드들</h2>
+    <h3>exec("문자열") => 문자열 추출</h3>
+    pattern.exec('abcde'); => ["a"]<br>
+    pattern.exec('bcdef'); = > null<br>
+    <h3>test("문자열") => 문자열 확인</h3>
+    pattern.text('abced'); = > true<br>
+    pattern.text('bcedf'); = > false<br>
+    <h3>match() => exec()와 비슷</h3>
+    let str = "abcdef"
+    str.match(pattern); => ["a"] 없으면 null 이 나온다.
+    <h3>replace() => 치환</h3>
+    str.replace(pattern, 'A'); = > "Abcde" 문자열이 리턴된다.
+
+    pattern = /a./ => .은 어떤 문자던지 다 온다는 것. <br>
+    pattern.exec('abcde'); = >["ab"]<br><br><br>
+
+
+    <h2>옵션 i와 g</h2>
+    <h3>i 옵션 => 대소문자를 구분하지 않는다.</h3>
+    let xi = /a/;<br>
+    "Abcde".match(xi); => null<br>
+    
+    <br>
+    let oi = /a/i;<br>
+    "Abced".match(oi); => ["A"]<br>
+
+    <h3>g 옵션 => global의 약자.</h3>
+    let xg = /a/;<br>
+    "abcdea".match(xi); => ["a"]<br>
+
+    <br>
+    let og = /a/g;<br>
+    "abced".match(oi); => ["a", "a"]<br>
+
+    <h3>혼합</h3>
+    let ig = /a/ig;<br>
+    "AabcdAa".match(ig); = > ["A", "a", "A", "a"]<br><br>
+
+
+    <h2>캡쳐 => 그룹을 지정해 그룹을 이용하는 것</h2>
+    /(\w+)\s(\w+)/ <br>
+    = > 괄호는 그룹을 의미한다. \w는 문자를 의미하며(A~z, 0~9) + 는 앞의 문자가 하나 이상일 경우 유효해지며<br>
+        &emsp;\s는 스페이스(공백)를 의미한다.<br><br>
+
+    let pattern = /(\w+)\s(\w+)/;<br>
+    let str = "coding everybody";<br>
+    let result = str.replace(pattern, "$2", "$1");<br><br>
+
+    console.log(result); => everybody, coding<br><br>
+    
+    $1은 첫번째 그룹, $2는 두번째 그룹을 말한다.<br>
+
+    <h2>치환</h2>
+    let urlPattern = /\b(?:https?):\/\/[a-z0-9-+&@#\/%?=~_|!:,.;]*/gim;<br>
+    let content = "생활코딩 : https://opentutorials.org/course/1 입니다. 네이버 : http://naver.com 입니다.";<br>
+    let result = content.replace(urlPattern, function(){<br>
+        return '&lt;a href="'+url+'"&gt;' + url + '&lt;/a&gt;';<br>
+    });<br>
+    console.log(result);
+
+</body>
+<script>
+    let urlPattern = /\b(?:https?):\/\/[a-z0-9-+&@#\/%?=~_|!:,.;]*/gim;
+    let content = "생활코딩 : https://opentutorials.org/course/1 입니다. 네이버 : http://naver.com 입니다.";
+    let result = content.replace(urlPattern, function(url){
+        return '<a href="'+url+'">' + url + '</a>';
+    });
+    console.log(result);
+</script>
+</html>
