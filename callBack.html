@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>값으로서의 함수와 콜백</title>
+</head>
+<body>
+    <h1>값으로서의 함수</h1>
+    자바스크립트에서는 함수도 객체이다. 다시말해 일종의 값이다. <br>
+    따라서 변수에 담을 수 있고, 함수를 매개변수로 넘겨줄 수도 있다. 이는 다른 언어와 다른 점이다.<br>
+
+    let a = function(){}    =>    function a(){}<br>
+    a = {<br>
+        &emsp;b : function(){ => 객체 안에 있는 함수를 메소드라고 한다.<br>
+            <br>
+            &emsp;}<br>
+    };<br><br>
+
+    fuction cal(func, num){<br>
+        &emsp;return func(num);<br>
+    }<br><br>
+
+    function increase(num){<br>
+        &emsp;return num + 1;<br>
+    }<br><br>
+
+    cal(increase, 1);<br>
+
+    <h2>함수의 리턴값으로 사용하는 예</h2>
+
+    function cal(mode){<br>
+        &emsp;let funcs = {<br>
+            &emsp;&emsp;'plus' : function(left, right){return left + right}<br>
+            &emsp;&emsp;'minus': function(left, right){return left - right}<br>
+            &emsp;}<br><br>
+
+            &emsp;return funcs(mode);<br>
+    }<br>
+
+    <h2>배열의 값으로 사용하는 예</h2>
+    let process = {<br>
+        &emsp;function(input){return input + 10},<br>
+        &emsp;function(input){return input * input},<br>
+        &emsp;function(input){return input / 2}<br>
+    };<br>
+
+    <h1>콜백</h1>
+    
+</body>
+</html>

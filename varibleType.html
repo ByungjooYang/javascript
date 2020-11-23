@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>유효범위</title>
+</head>
+<body>
+    <h1>유효범위(Scope)</h1>
+    
+    let vscope = 'global'; => 전역변수<br><br>
+
+    function fscope(){<br>
+        let vscope = 'local'; => 지역변수<br>
+        alert(vscope);<br>
+    }<br>
+
+    fscope(); => local<br>
+
+    전역변수는 어디에서든 오고 지역변수는 함수 중괄호 안에서만 접근 가능<br>
+    'local'은 fscope() 함수 밖에서는 못쓴다.<br>
+    var는 이 문법이 파괴되므로 사용하지 말것<br>
+
+    <h2>정적 유효범위</h2>
+    js는 함수가 선언된 시점에서의 유효범위를 갖는다. 이런 유효범위 방식을 정적 유효범위 <br>
+    혹은 어휘적 유효범위(렉시컬 스코프(Lexical Scope))라고 한다.<br>
+
+    사용될 때가 아니고 정의 될 때의 전역변수가 사용된다는 것이다.<br><br>
+
+    let i = 5;<br>
+    function a(){<br>
+        let i = 10;<br>
+        b();<br>
+    }<br><br>
+
+    function b(){<br>
+        document.write(i);<br>
+    }<br>
+
+    function b가 사용될 때의 전역변수 10이 아니라 정의될 때 전역변수 5가 나온다.<br>
+</body>
+<script>
+    let i =5;
+    function a(){
+        let i = 10;
+        b();
+    }
+    function b(){
+        document.write(i);
+    }
+
+    a();
+</script>
+</html>
